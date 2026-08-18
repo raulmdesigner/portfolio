@@ -1,0 +1,4 @@
+Pacote atualizado em 18 de agosto de 2026.
+
+Para atualizar no GitHub Pages, extraia este ZIP e envie todo o seu conteúdo para a raiz do repositório.
+As imagens do processo já estão dentro de assets/process.
