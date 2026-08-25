@@ -49,6 +49,15 @@
       html.rms-portfolio-lite .approach,
       html.rms-portfolio-lite .contact-section { content-visibility: auto; contain-intrinsic-size: auto 900px; }
       @media (hover:hover) { html.rms-portfolio-lite .project-card:hover, html.rms-portfolio-lite .category-card:hover { transform: translateY(-3px) !important; } }
+      /* Horizonte Tátil: o painel usa a viewport visual em celular; não desloca a página de fundo por 100vw. */
+      @media (max-width: 760px) {
+        html, body { width: 100%; max-width: 100%; overflow-x: clip; overscroll-behavior-x: none; }
+        body.gallery-open .site-frame, body.process-open .site-frame { transform: none !important; }
+        .project-gallery, .process-gallery { left: 0; right: auto; width: 100%; max-width: 100%; transform: translate3d(100%, 0, 0); }
+        .project-gallery.is-open, .process-gallery.is-open { transform: translate3d(0, 0, 0); }
+        html.rms-mobile-overlay-lock, html.rms-mobile-overlay-lock body { overflow: hidden !important; }
+        html.rms-mobile-overlay-lock body { position: fixed; top: var(--rms-overlay-scroll-y, 0px); left: 0; right: 0; width: 100%; }
+      }
     </style>
     <style id="rms-portfolio-loading-screen">
       /* Horizonte Tátil: HUD RMS só libera automaticamente conteúdo já preparado; há saída manual se uma origem externa falhar. */
@@ -381,5 +390,6 @@
 
     <script src="./supabase-config.js?v=20260819-03"></script>
     <script src="./assets/rms-portfolio-language-and-loading.js?v=20260825-02"></script>
+    <script src="./assets/rms-portfolio-mobile-stability.js?v=20260825-01"></script>
   </body>
 </html>
