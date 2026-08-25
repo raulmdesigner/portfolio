@@ -1,8 +1,8 @@
 /* Horizonte Tátil: campos extras de PT/EN no painel; consulta os valores reais e não mantém observadores ou intervalos ativos. */
 (() => {
   const groups = [
-    ['Abertura e menu lateral', [['hero_eyebrow', 'Linha acima do título'], ['hero_text', 'Texto principal'], ['rail_about', 'Menu: Quem sou eu'], ['rail_work', 'Menu: Trabalhos'], ['rail_process', 'Menu: Processo'], ['rail_contact', 'Menu: Contato'], ['rail_email', 'Menu: E-mail']]],
-    ['Experiência e benefício', [['satisfaction_title', 'Título das avaliações'], ['satisfaction_intro', 'Introdução das avaliações'], ['scratch_title', 'Título da raspadinha'], ['scratch_instruction', 'Instrução da raspadinha']]],
+    ['Abertura e menu lateral', [['hero_eyebrow', 'Linha acima do título'], ['hero_title', 'Título principal'], ['hero_text', 'Texto principal'], ['rail_about', 'Menu: Quem sou eu'], ['rail_work', 'Menu: Trabalhos'], ['rail_process', 'Menu: Processo'], ['rail_contact', 'Menu: Contato'], ['rail_email', 'Menu: E-mail']]],
+    ['Experiência e benefício', [['satisfaction_title', 'Título das avaliações'], ['satisfaction_intro', 'Introdução das avaliações'], ['scratch_title', 'Título da raspadinha'], ['scratch_instruction', 'Instrução da raspadinha'], ['scratch_ticket_lead', 'Raspadinha: primeira linha'], ['scratch_ticket_strong', 'Raspadinha: palavra em destaque']]],
     ['Galeria e visualizador', [['gallery_back', 'Voltar da galeria'], ['gallery_eyebrow', 'Linha da galeria'], ['gallery_contact', 'Botão da galeria'], ['viewer_close', 'Fechar visualizador'], ['viewer_contact', 'Botão do visualizador']]]
   ];
   const esc = value => String(value ?? '').replace(/[&<>'"]/g, char => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', "'": '&#39;', '"': '&quot;' }[char]));

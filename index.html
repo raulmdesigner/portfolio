@@ -51,7 +51,7 @@
       @media (hover:hover) { html.rms-portfolio-lite .project-card:hover, html.rms-portfolio-lite .category-card:hover { transform: translateY(-3px) !important; } }
     </style>
     <style id="rms-portfolio-loading-screen">
-      /* Horizonte Tátil: HUD RMS temporário, discreto e sempre liberado por timeout de segurança. */
+      /* Horizonte Tátil: HUD RMS só libera automaticamente conteúdo já preparado; há saída manual se uma origem externa falhar. */
       #rms-loading-screen { position: fixed; inset: 0; z-index: 9999; display: grid; place-items: center; padding: 24px; background: #163145; color: #fff7ea; transition: opacity .28s ease, visibility .28s ease; }
       #rms-loading-screen::before, #rms-loading-screen::after { content: ""; position: absolute; border: 1px solid rgba(255,247,234,.18); pointer-events: none; }
       #rms-loading-screen::before { inset: 18px; border-radius: 28px; }
@@ -62,6 +62,8 @@
       .rms-load-status { margin: 22px 0 10px; color: rgba(255,247,234,.78); font: 500 14px/1.45 "DM Sans", sans-serif; }
       .rms-load-track { height: 5px; overflow: hidden; border-radius: 999px; background: rgba(255,247,234,.16); }
       .rms-load-track span { display:block; width: 38%; height:100%; border-radius:inherit; background:#f97316; animation:rms-load-run 1.1s ease-in-out infinite; }
+      .rms-load-continue { display:none; width:100%; margin-top:18px; padding:11px 14px; border:1px solid rgba(255,247,234,.42); border-radius:999px; color:#fff7ea; background:transparent; font:700 12px/1 "DM Sans",sans-serif; letter-spacing:.04em; cursor:pointer; }
+      html.rms-load-needs-help .rms-load-continue { display:block; }
       html.rms-portfolio-ready #rms-loading-screen { opacity: 0; visibility: hidden; pointer-events: none; }
       @keyframes rms-load-run { 0%{transform:translateX(-100%)} 100%{transform:translateX(360%)} }
       @media (prefers-reduced-motion: reduce), (max-width: 640px) { .rms-load-track span { animation: none; width: 62%; } }
@@ -75,6 +77,7 @@
         <p class="rms-load-title">Montando<br />o jogo.</p>
         <p class="rms-load-status">Sincronizando seu acesso ao portfólio.</p>
         <div class="rms-load-track" aria-hidden="true"><span></span></div>
+        <button class="rms-load-continue" type="button">Entrar mesmo assim</button>
       </div>
     </div>
     <!-- Horizonte Tátil: vidro fosco, marca RMS oficial, apresentação editorial e uma câmera lateral que atravessa cada frente criativa. -->
